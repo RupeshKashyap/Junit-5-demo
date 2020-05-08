@@ -1,6 +1,7 @@
 package com.rupesh;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,6 +10,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) // changing default instance behavior 
 class MathUtilsTest {
@@ -41,7 +44,10 @@ class MathUtilsTest {
 	}
 	
 	@Test
+//	@EnabledOnOs(OS.LINUX)
 	void devide() {
+		Boolean isServerUp = false;
+		assumeTrue(isServerUp);
 //		for exception handling we  are user assertThrows
 		//  lambda expression not supported in junit 4 for ssertThrow 
 //		MathUtils mathUtils = new MathUtils();

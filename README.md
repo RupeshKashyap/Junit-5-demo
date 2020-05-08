@@ -22,3 +22,13 @@ Basic Junit5 project
 1. for large scal test cases
 2. @DisplayName :- we can change test case nam or description for the test case
 3. @Disabled :- test scope will skip this test when test case is annotated with @Disabled it will not give any test failer . 
+
+# Conditional Executon
+1. @EnabledOnOs(OS.LINUX) : test case will run only for particular OS otherwise test case will disabled 
+2. @EnabledOnJre(JRE.JAVA_11)
+3. @EnabledIf
+4. @EnabledIfSystemProperty
+5. @EnabledIfEnvironmentVariable
+
+# Assumption 
+1. assumeTrue(true) for asumimg something like server is server is up(based on the assumption it will execute , if assumption is false simple it will not execute the next line)
