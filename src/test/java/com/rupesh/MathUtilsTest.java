@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
@@ -31,6 +33,7 @@ class MathUtilsTest {
 
 //	telling this this method in for testing
 	@Test
+	@DisplayName("Testing add method")
 	void testAdd() {
 		int actual = mathUtils .add(1, 1);
 		int expected = 2;
@@ -50,6 +53,15 @@ class MathUtilsTest {
 	@Test
 	void testComputeCircleArea() {
 		assertEquals(78.53981633974483, new MathUtils().computeCircleArea(5));
+	}
+	
+	@Test
+	@Disabled
+	@DisplayName("Method should not run")
+	void disableed() {
+		int actual = mathUtils .add(1, 1);
+		int expected = 2;
+		assertEquals(expected, actual,"The add() method should add two number");
 	}
 	
 
