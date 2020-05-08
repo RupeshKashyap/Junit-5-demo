@@ -6,15 +6,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.TestInstance;
 
-@SpringBootTest
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) // changing default instance behavior 
 class MathUtilsTest {
 	
 	MathUtils mathUtils ;
 	
 	@BeforeAll
-	static void beforeAll() {
+	 void beforeAll() {
 	System.out.println("This needs to run before all");
 	}
 	
