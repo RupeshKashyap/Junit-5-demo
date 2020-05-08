@@ -70,5 +70,16 @@ class MathUtilsTest {
 		assertEquals(expected, actual,"The add() method should add two number");
 	}
 	
+	@Test
+	@DisplayName("Multiply testing")
+	void multiply() {
+//		assertAll from junit 5
+		assertAll(
+				() -> assertEquals(4, mathUtils.multiply(2, 2)),
+				() -> assertEquals(0,  mathUtils.multiply(2, 0)),
+				() -> assertEquals(-4,  mathUtils.multiply(2, -2))
+				);
+	}
+	
 
 }

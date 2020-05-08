@@ -31,4 +31,9 @@ Basic Junit5 project
 5. @EnabledIfEnvironmentVariable
 
 # Assumption 
-1. assumeTrue(true) for asumimg something like server is server is up(based on the assumption it will execute , if assumption is false simple it will not execute the next line)
+1. assumeTrue(true) for asumimg something like server is server is up(based on the assumption it will execute , if assumption is false simple it will not execute the next line).
+
+#Nested Test Case 
+1. @Nested : 
+# AssetAll (new in junit -5 )
+1. @AssetAll :-  it the the annotation defien than bunch of test case can excetute at a time and if any of those fail mark as a fail 
