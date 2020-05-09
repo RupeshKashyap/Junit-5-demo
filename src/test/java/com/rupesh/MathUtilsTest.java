@@ -61,15 +61,18 @@ class MathUtilsTest {
 	class testAdd {
 		
 		@Test
-		@DisplayName("This method for +")
+		@DisplayName("When adding two positive number")
 		void testPositive() {
 			assertEquals(2, mathUtils.add(1, 1),"This method should add two number");
 		}
 		
 		@Test
-		@DisplayName("This method for -")
+		@DisplayName("When adding two negative number")
 		void testNegative() {
-			assertEquals(-2, mathUtils.add(-1, -1),"This methid should add two negative number");
+			int actual = mathUtils.add(-1, -1);
+			int expected = -2;  
+//			using the 3rd argument as a Lambda it will execute only when test case fails 
+			assertEquals(expected,actual , () -> "testNegative expected "+expected+" but returning "+actual);
 		}
 		
 	}
