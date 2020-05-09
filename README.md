@@ -43,4 +43,17 @@ Basic Junit5 project
 1. This annotation use for run same test multiple times . 
 2. it takes arguments in integer that is define how many tiem test case will execute
 3. This annotation we are using insted of @Test anootation
-4. passed arguments passed the with the method eg. method( Repetion repetioninfo) . And we write some logic to execute method or we can use some predefine method
+4. passed arguments passed the with the method eg. method( RepetionInfo repetioninfo) . And we write some logic to execute method or we can use some predefine method
+
+# Taging
+1. @Tag : this annotain use for both class and method level. 
+2. this annotain takes the arument tag name @Tag("Math"). 
+3. We can run the selected tag 
+4. we can configure in eclise IDE and as well MAVEN plugin firesure.
+5. in the firesure plugin we can add configuration tag and configure
+
+# TestInfo and TestRepoter
+1. TestInfo : it is giving the information about the test case
+2. TestRepoter :  it is also give the information about the test case but we can generate the report also 
+3. both are interface
+4. testReporter gives the time-stamp and more usefully details 

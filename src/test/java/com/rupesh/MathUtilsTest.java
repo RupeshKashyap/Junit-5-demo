@@ -9,24 +9,32 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestReporter;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) // changing default instance behavior
-@DisplayName("Running Math clas")
+@DisplayName("Running Math class")
 class MathUtilsTest {
 	
 	MathUtils mathUtils ;
+	TestInfo testInfo;
+	TestReporter testReporter;
 	
 	@BeforeAll
-	 void beforeAll() {
+	 void beforeAll(TestInfo testInfo, TestReporter testReporter) {
+		
 	System.out.println("This needs to run before all");
 	}
 	
 	@BeforeEach
-	void init() {
+	void init(TestInfo testInfo, TestReporter testReporter) {
+		this.testInfo = testInfo;
+		this.testReporter = testReporter;
 	 mathUtils = new MathUtils();
+	 testReporter.publishEntry("testInfo = "+testInfo.getDisplayName());
 
 	}
 	
@@ -79,7 +87,11 @@ class MathUtilsTest {
 	}
 	
 	@Test
+	@DisplayName("Test Compute circle area")
 	void testComputeCircleArea() {
+//		System.out.print("testInfo = "+testInfo.getDisplayName()+ "=> testReporter =  "+testInfo.getTestMethod());
+//		 testReporter gives the time-stamp and more usefully details 
+		testReporter.publishEntry("testInfo = "+testInfo.getDisplayName()+ "=> testReporter =  "+testInfo.getTestMethod());
 		assertEquals(78.53981633974483, new MathUtils().computeCircleArea(5));
 	}
 	
@@ -87,6 +99,7 @@ class MathUtilsTest {
 	@Disabled
 	@DisplayName("Method should not run")
 	void disableed() {
+		
 		int actual = mathUtils .add(1, 1);
 		int expected = 2;
 		assertEquals(expected, actual,"The add() method should add two number");
