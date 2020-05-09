@@ -38,3 +38,9 @@ Basic Junit5 project
 
 # AssetAll (new in junit -5 )
 1. @AssetAll :-  it the the annotation defien than bunch of test case can excetute at a time and if any of those fail mark as a fail 
+
+# @ReapetedTest
+1. This annotation use for run same test multiple times . 
+2. it takes arguments in integer that is define how many tiem test case will execute
+3. This annotation we are using insted of @Test anootation
+4. passed arguments passed the with the method eg. method( Repetion repetioninfo) . And we write some logic to execute method or we can use some predefine method

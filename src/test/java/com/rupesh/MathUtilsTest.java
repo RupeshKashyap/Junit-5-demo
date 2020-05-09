@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.condition.EnabledOnOs;
@@ -66,7 +67,7 @@ class MathUtilsTest {
 			assertEquals(2, mathUtils.add(1, 1),"This method should add two number");
 		}
 		
-		@Test
+		@RepeatedTest(3)
 		@DisplayName("When adding two negative number")
 		void testNegative() {
 			int actual = mathUtils.add(-1, -1);
