@@ -1,19 +1,19 @@
 package com.rupesh;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS) // changing default instance behavior 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) // changing default instance behavior
+@DisplayName("Running Math clas")
 class MathUtilsTest {
 	
 	MathUtils mathUtils ;
@@ -53,6 +53,24 @@ class MathUtilsTest {
 //		MathUtils mathUtils = new MathUtils();
 //		assertThrows(NullPointerException.class, () -> mathUtils.devide(1, 0),"Devide by zero should throw");
 		assertThrows(ArithmeticException.class, () -> mathUtils.devide(1, 0),"Devide by zero should throw"); // correct 
+		
+	}
+	
+	
+	@Nested
+	class testAdd {
+		
+		@Test
+		@DisplayName("This method for +")
+		void testPositive() {
+			assertEquals(2, mathUtils.add(1, 1),"This method should add two number");
+		}
+		
+		@Test
+		@DisplayName("This method for -")
+		void testNegative() {
+			assertEquals(-2, mathUtils.add(-1, -1),"This methid should add two negative number");
+		}
 		
 	}
 	

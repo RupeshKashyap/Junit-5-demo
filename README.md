@@ -34,7 +34,7 @@ Basic Junit5 project
 1. assumeTrue(true) for asumimg something like server is server is up(based on the assumption it will execute , if assumption is false simple it will not execute the next line).
 
 #Nested Test Case 
-1. @Nested : 
+1. @Nested : this annotation use in inner class level , @nested group together which in inside the inner class and run as a one test case and all nested cases are sub test for the class
 
 # AssetAll (new in junit -5 )
 1. @AssetAll :-  it the the annotation defien than bunch of test case can excetute at a time and if any of those fail mark as a fail 
